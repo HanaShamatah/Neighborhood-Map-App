@@ -1,4 +1,5 @@
 var map;
+var markers = [];
 
 // initiate Google map //
 function initMap() {
@@ -15,7 +16,6 @@ function initMap() {
 var viewModel = function() {
     var self= this;
 
-    this.markers = ko.observableArray([]);
     this.markerslist = ko.observableArray([]);
     this.filter = ko.observable("");
     this.bounds = new google.maps.LatLngBounds();
@@ -23,7 +23,7 @@ var viewModel = function() {
 
     // make a marker for each location
     locations.forEach(function(item) {
-        var marker = makeMarker(item, self.bounds, self.markers);
+        var marker = makeMarker(item, self.bounds, markers);
         // open info window by clicking on marker icon
         marker.addListener('click', function() {
             INFOWindow(this, self.infoWindow);
@@ -40,9 +40,9 @@ var viewModel = function() {
         var filter = this.filter().toLowerCase();
         // all markers appear without filtering
         if (!filter) {
-            console.log("number of markers: " + self.markers().length);
+            console.log("number of markers: " + markers.length);
             self.markerslist([]);
-            self.markers().forEach(function(mar) {
+            markers.forEach(function(mar) {
                 mar.setVisible(true);
                 self.markerslist.push(mar);
             });
@@ -51,7 +51,7 @@ var viewModel = function() {
         // control the appeared markers and location names by filter input
         else {
             self.markerslist([]);
-            self.markers().forEach(function(mar) {
+            markers.forEach(function(mar) {
                 if (mar.title.toLowerCase().indexOf(filter) ==! -1) {
                     console.log(mar.title);
                     self.markerslist.push(mar);
