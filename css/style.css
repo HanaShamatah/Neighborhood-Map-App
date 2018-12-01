@@ -1,0 +1,169 @@
+* {
+	box-sizing:border-box;
+	font-family: arial, helvetica, "sans serif", "sans serif";
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 2.5em;
+	border-bottom: solid 2px;
+	padding: 20px;
+	margin: unset;
+	background-color: rgb(189, 219, 239);
+}
+
+#sidebar {
+	display: inline-block;
+	width: 15%;
+	height: 100%;
+	vertical-align: top;
+	margin: auto;
+/*	padding: 5px 10px;
+*/}
+
+#filter_input {
+	height: 50px;
+	background-color: rgb(189, 219, 239);
+	width: 100%;
+}
+
+#search {
+	display: inline-block;
+	font-size: 1.2em;
+	height: 100%;
+	width: 25%;
+	padding: 5px;
+}
+
+#location_name {
+	display: inline-block;
+	height: 100%;
+	width: 72%;
+	padding: 8px;
+	border: none;
+	border-left: solid 1px #ccc;
+}
+
+#location_list {
+	height: 100%;
+	overflow: auto;
+	border-top: solid 1px #ccc;
+}
+
+#location_title {
+	margin: auto;
+	cursor: pointer;
+	padding: 15px;
+	border-bottom: solid 1px #ccc;
+	font-size: 1.2em;
+}
+
+#location_title:hover {
+	background-color: rgb(189, 219, 239);
+}
+
+#map {
+	display: inline-block;
+	width: 84%;
+	height: 100%;
+}
+
+#pano {
+	width: 200px;
+	height: 200px;
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1680px) {
+	#filter_input {
+		display: inline-block;
+	}
+
+	#search {
+		font-size: 1.5em;
+		display: inline-block;
+		width: 100%;
+	}
+
+	#location_name {
+/*		height: 70%;
+*/		width: 100%;
+		border: none;
+	}
+
+	#location_list {
+		margin-top: 20px;
+	}
+
+	#sidebar {
+		width: 25%;
+	}
+
+	#map {
+		width: 74%;
+	}
+}
+
+@media screen and (min-width: 451px) and (max-width: 1000px) {
+	#filter_input {
+		display: inline-block;
+	}
+
+	#search {
+		font-size: 1.5em;
+		display: inline-block;
+		width: 100%;
+	}
+
+	#location_name {
+/*		height: 70%;
+*/		width: 100%;
+		border: none;
+	}
+
+	#location_list {
+		margin-top: 20px;
+	}
+
+	#sidebar {
+		width: 40%;
+	}
+
+	#map {
+		width: 59%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#filter_input {
+		display: inline-block;
+	}
+
+	#search {
+		font-size: 1.5em;
+		display: inline-block;
+		width: 100%;
+	}
+
+	#location_name {
+/*		height: 70%;
+*/		width: 100%;
+		border: none;
+	}
+
+	#location_list {
+		margin-top: 20px;
+	}
+
+	#sidebar {
+		width: 60%;
+	}
+
+	#map {
+		width: 35%;
+	}
+}
